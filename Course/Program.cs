@@ -15,9 +15,7 @@ namespace Course
             list.Add(new Product("Tablet", 350.50));
             list.Add(new Product("HD Case", 80.90));
 
-            Action<Product> act = p => { p.Price += p.Price * 0.1; }; // Como é uma 'Ação (Action)', deve ser feita entre 'chaves', para indicar que a expressão tem um corpo, mas é um void (Não retorna nenhum valor)
-
-            list.ForEach(act);
+            list.ForEach(p => { p.Price += p.Price * 0.1; }); // Expressão Lambda Inline
             foreach (Product p in list)
             {
                 Console.WriteLine(p);
